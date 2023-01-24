@@ -181,3 +181,35 @@ for what we will use here is
 group.key() and second will be our group.count()
 
 
+************* joins
+
+we have inner join, group join and cross joins
+
+among this inner join and cross join are similar to sql 
+
+but group is not equivalent of sql
+
+so in a relational database 
+
+we use joins to link to tables togethers 
+
+you can use existing relation between your enities
+
+var query
+	from c in context.Courses
+	select new {Coursename = c.name, AuthorName = c.Author.name}
+
+
+so here we didnt need any join as we have navigation property
+
+so you may ask when do we use inner join in link
+
+inner join is used when we want to link properties that do not have
+navigation property
+
+imagice if we didnt had this nav property
+
+from c in courses
+join a in context.Authors on c.AuthorId equals a.Id
+select new {CourseName  = c.Name, AuthoName = a.Name}
+we use equals of link

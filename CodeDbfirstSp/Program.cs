@@ -13,12 +13,13 @@ namespace CodeDbfirstSp
             var _context = new PlutoDbContext();
             var query =
                 from c in _context.Courses
-                group c by c.Level into g
-                select g;
+                join a in _context.Authors on c.AuthorID equals a.AuthorID
+                where c.Title.Contains("c#")
+                select new { CourseName = c.Title, AuthorName = a.Name};
             
-            foreach(var group in query)
+            foreach(var item in query)
             {
-                Console.WriteLine("{0} {1}",group.Key , group.Count());
+                Console.WriteLine("{0}",item.CourseName);
             }
             Console.ReadLine();
         }
