@@ -115,3 +115,16 @@ find cannot be used after include so i am changint this to a single
 vara author = context.Authors.Include(a => a.Courses).Single( a => a.id == 1);
 context.Courses.RemoveRange(author.Courses);
 context.Authors.Remove(author)
+
+************** working with change tracker
+add, update, delete
+var entries = context.changeTracker.Entries();
+
+foreach ( var entry in entries){
+    console.Writeline(entry.State)
+}
+
+another property entity
+
+you have edited the property and you want to reload it
+
