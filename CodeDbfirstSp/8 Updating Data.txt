@@ -128,3 +128,21 @@ another property entity
 
 you have edited the property and you want to reload it
 
+******************* linqpad
+
+
+this you can download from linqpad
+
+on the left side here we can add a connection
+
+here we are going to use an exisint db context
+
+select entity framework dbcontext
+
+bin > debug > queries
+
+app.config for connection
+
+here we can see courses tab here
+
+and similar to sequel profiler we have a sql query viewer to see 
