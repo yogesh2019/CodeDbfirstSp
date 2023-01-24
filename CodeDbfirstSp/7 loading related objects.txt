@@ -120,3 +120,62 @@ bad pracise
 using too many includes
 
 can lead to more and more complex queries
+
+
+
+
+
+
+
+************************ explicit loading
+
+in this loading similar to eager loading 
+we tell entity framework what to load ahead of time
+
+the difference between eager loading and explicit is that 
+
+the eager 
+uses joins
+one round trip
+
+explicit loading
+separate queries
+multiple round trips	
+
+
+var author = context.Authors.INclude.single
+
+now for explicit loading
+
+i will remove this include
+
+context.Authors.Single(a => a.id ==1)
+
+MSDN way
+context.Entry(author).Collection(a => a.Courses).Load()
+
+this is only fine for single object
+
+let me show you my way of explicit loading
+
+context.courses.Where( c => c.authoid = author.id).Load()
+
+so the only thing to remember is load method here 
+
+foreach (var course in author.Coursse)
+
+explicit loading has another benefit 
+
+we can apply filter to the related objects
+
+// my way
+
+context.courses.Where( c => c.authoid = author.id && c.FullPrice = 0).Load()
+
+in operator
+
+var authorIds = authors.Select(a => a.Id);//it s iEnum
+
+context.Courses.Where(c => authorIds.Contains(c.authorId)).Load()
+
+
