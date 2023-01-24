@@ -274,3 +274,6 @@ here instead of join we use from
 from a in context.Authors
 from c in context.Courses
 select new { Authorname = a.Name, courseName = c.Name}
+
+
+

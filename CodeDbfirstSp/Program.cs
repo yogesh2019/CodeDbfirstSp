@@ -12,11 +12,16 @@ namespace CodeDbfirstSp
         {
             var _context = new PlutoDbContext();
             var query =
-               _context.Courses.Where(c => c.Level == 0).OrderBy(c => c.Level).ThenByDescending(c => c.Title);
+               _context.Courses
+               .Where(c => c.Level == 0).
+               Select(c => c.Author);
 
             foreach (var i in query)
             {
-                Console.WriteLine(i.Title);
+                foreach(var a in i) 
+                    {
+
+                    } 
             }
             Console.ReadLine();
         }

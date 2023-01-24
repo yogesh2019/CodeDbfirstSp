@@ -28,3 +28,24 @@ Thenby(c => c.Level)
 you can use orderbyDescending
 
 after .you can press enter 
+
+
+
+
+*********** projection
+
+.select => new {courseName = c.Name , AuthorName = c.Author.name}
+
+since we have navigation property here we dont need joins here
+
+Iquerable interface derives form IEnumerable
+
+i querable it returning a list of list of tags
+
+so the things is when you are using 
+
+select on list 
+you will end up getting llist of list
+
+
+you can create flat list by doing selectMany
