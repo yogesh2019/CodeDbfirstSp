@@ -14,9 +14,9 @@ namespace CodeDbfirstSp
             var query = from c in _context.Courses
                         where c.Title.Contains("C#")
                         orderby c.Title descending
-                        select c;
+                        select new { Name = c.Title , Author = c.Author.Name};
             foreach( var c in query)
-                Console.WriteLine(c.Title );
+                Console.WriteLine(c.Name );
             Console.ReadLine();
         }
     }

@@ -135,3 +135,9 @@ c.Level descending
 
 but sometimes we might want to return a different object
 
+
+sometimes we want to return a fewer properties for objects
+
+so here instead of selecting c we will send
+
+select new {Name = c.Name, Author = c.Author.Name}
