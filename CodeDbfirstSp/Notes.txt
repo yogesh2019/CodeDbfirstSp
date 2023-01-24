@@ -266,3 +266,11 @@ select a.name,
 
  so thats why i told we use group join in links in situation where we use left join in sequel
 
+***************** cross join will be a full combination of every author and every course
+
+
+here instead of join we use from
+
+from a in context.Authors
+from c in context.Courses
+select new { Authorname = a.Name, courseName = c.Name}
