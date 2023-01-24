@@ -106,8 +106,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="7 loading related objects.txt" />
+    <Content Include="8 Updating Data.txt" />
+    <Content Include="DeferredExecution.txt" />
+    <Content Include="IQuerableExplained.txt" />
     <Content Include="LinqExtensionMethods.txt" />
     <Content Include="Notes.txt" />
+    <Content Include="OtherMethodsNotByLinq.txt" />
     <Content Include="PlutoModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PlutoModel.Context.cs</LastGenOutput>

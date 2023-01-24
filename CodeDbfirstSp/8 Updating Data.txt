@@ -81,4 +81,12 @@ var course = new Cours
                 Authorid = 1
             };
 
-*********************** 
+*********************** updating objects
+
+instead of using single method we can use find method
+
+one thing you need to take care while updating is
+
+first you need to load them in your context
+
+this is because of the change tracker  
