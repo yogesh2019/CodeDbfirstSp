@@ -84,3 +84,39 @@ in sequel profiler i can see all this queries
 these are all unnecessary queries
 
 here it is only 4 extra queries as we had only 4 unique authors
+
+
+********** eager loading 
+
+it is opposite of lazy loading
+
+we are loading related upfront to prevent additional queries to db
+
+context.Courses.Include().ToList()
+
+this has two overloads
+first we can do like this
+"Author"
+
+using System.Data.Entiiy
+
+c => c.Author
+so with this if i change in future
+i will get compile time error for this prop
+
+we can use renameRefractoring
+
+here the query will have inner join
+
+/// now let see how to use eager loading with multiple levels
+
+// for single properties
+context.Courses.Include(c => c.Author.Address)
+
+// for colletion properties
+context.Courses.Include(a => a.Tags.Select(t.Moderator))
+
+bad pracise
+using too many includes
+
+can lead to more and more complex queries
