@@ -25,3 +25,60 @@ once this is done
 
 change tracker mark agains them as unsaved
 
+
+****************** Adding object
+
+let see how to add a new object using entity framework
+
+var context = new PlutoDbContext();
+
+            var course = new Cours
+            {
+                Title = "New course",
+                Description = "new description",
+                Price = 19,
+                Level = 1,
+                Author = new Author { AuthorID = 1, Name = "new author" }
+            };
+            context.Courses.Add(course);
+            context.SaveChanges();
+
+now there is slight probem with this code
+
+now if we take a look at the data base we will see
+
+there are two authors with same naem
+
+
+so since we are creating a new object here
+dbContext sees this as new object and doesn't look for the 
+
+wpx application
+
+we will use exising object
+
+var authors = context.Authors.ToList()
+var author = authors.Authors.Single( a => a.Id == 1)
+var course = new Cours
+            {
+                Title = "New course",
+                Description = "new description",
+                Price = 19,
+                Level = 1,
+                Author = author
+            };
+
+so here we passed an existing object
+
+**************** for foregn key property
+
+var course = new Cours
+            {
+                Title = "New course",
+                Description = "new description",
+                Price = 19,
+                Level = 1,
+                Authorid = 1
+            };
+
+*********************** 

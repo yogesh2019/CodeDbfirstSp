@@ -10,19 +10,18 @@ namespace CodeDbfirstSp
     {
         static void Main(string[] args)
         {
-            var _context = new PlutoDbContext();
-            var query =
-               _context.Courses
-               .Join(_context.Authors,
-               c => c.AuthorID,
-               a => a.AuthorID,
-               (course, author) => new { Name= course.Title, });
+            var context = new PlutoDbContext();
 
-            foreach(var i in query)
+            var course = new Cours
             {
-                Console.WriteLine(i.Name);
-            }
-            Console.ReadLine();
+                Title = "New course",
+                Description = "new description",
+                Price = 19,
+                Level = 1,
+                Author = new Author { AuthorID = 1, Name = "new author" }
+            };
+            context.Courses.Add(course);
+            context.SaveChanges();
         }
     }
 }
