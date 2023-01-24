@@ -125,3 +125,13 @@ start with from c
 
 and ends with select c
 
+we can add multiple contitions here like 
+
+c.title && c.id
+
+we can use orderby c.Name
+
+c.Level descending	
+
+but sometimes we might want to return a different object
+
