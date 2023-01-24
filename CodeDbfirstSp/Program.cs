@@ -10,12 +10,15 @@ namespace CodeDbfirstSp
     {
         static void Main(string[] args)
         {
-            var dbContext = new PlutoDbContext();
-            var courses = dbContext.GetCourses();
-            foreach(var c in courses)
-            {
-                Console.WriteLine(c.Title);
-            }
+            var context = new PlutoDbContext();
+            var query =
+                from c in context.Courses
+                where c.Title.Contains("C#")
+                orderby c.Title
+                select c;
+            foreach (var course in query)
+                Console.WriteLine(course.Title);
+         
             Console.ReadLine();
         }
     }

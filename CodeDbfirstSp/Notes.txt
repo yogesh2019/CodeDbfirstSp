@@ -88,3 +88,26 @@ course.Level = CourseLevel.Beginner
 
 we can also create a new enum and reference here DbFirst.Level
 
+so before querying we need to have dbcontext
+
+
+
+as DbSet is a collection that represents table in the database
+
+first we create a dbContext
+
+var context = new PlutoContext()
+
+we can use linq or extention methods both
+
+from and in are linq key operators
+
+
+now let see the other way to query your database
+
+context.Courses.Where(c => c.Name.Contain('c#')).OrderBy(c => c.Name)
+
+the second style of programmers is fine with lambda style programmers
+
+
+the extension methods are more powerful
