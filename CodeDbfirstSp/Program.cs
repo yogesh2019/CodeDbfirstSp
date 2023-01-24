@@ -12,15 +12,11 @@ namespace CodeDbfirstSp
         {
             var _context = new PlutoDbContext();
             var query =
-                from c in _context.Courses
-                join a in _context.Authors on c.AuthorID equals a.AuthorID
-                where c.Title.Contains("c#")
-                select new { CourseName = c.Title, AuthorName = a.Name};
-            
-            foreach(var item in query)
-            {
-                Console.WriteLine("{0}",item.CourseName);
-            }
+                from a in _context.Authors
+                join c in _context.Courses on a.AuthorID equals c.AuthorID into g
+                select new { AuthorName = a.Name, Courses = g.Count() };
+            foreach (var i in query)
+                Console.WriteLine("{0}({1})",i.AuthorName,i.Courses);
             Console.ReadLine();
         }
     }

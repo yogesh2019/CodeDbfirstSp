@@ -213,3 +213,56 @@ from c in courses
 join a in context.Authors on c.AuthorId equals a.Id
 select new {CourseName  = c.Name, AuthoName = a.Name}
 we use equals of link
+
+*********** group joins
+
+imagine we have two list authors on the left and courses on the right
+
+
+we associate each object on the left with one or more mathing object on the right
+
+
+these are useful when we use an left join and aggregate function in sequel
+
+we want to get count of courses that all authors have
+
+
+select a.name,
+ from Authors A
+ Left join courses C
+ ON a.authorId = c.AuthorId
+
+ and finally add group by a.name
+
+ select a.name,count(*)
+ from Authors A
+ Left join courses C
+ ON a.authorId = c.AuthorId
+
+ and finally add group by a.name
+
+ so we can actually do this using group join
+
+
+ so we can do like 
+
+ from a in context.Authors
+ join c in context.Courses on a.Id equals c.AuthorId into g
+
+ the only difference here is g operator
+
+ so this will a standard join
+
+ but when you use into g 
+
+ the result will be a group join
+
+ as we said group join select each object on left
+
+ with one or more mathing objects on the right side
+
+ select new {AthorName = a.Name, Courses = g.Count()}
+
+
+ so thats why i told we use group join in links in situation where we use left join in sequel
+
