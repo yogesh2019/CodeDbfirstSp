@@ -80,3 +80,31 @@ group.key
 course.Name
 
 as i told 
+************************** we start with inner join
+context.Courses.Join(
+ it takes IEnumerable,
+
+
+when ever you see a func just use lambda exp
+
+, c=> c.authorId
+a => a.id
+)
+
+so you are using authodId on the course and
+id on author to join
+
+now the question is what should happen after joining
+
+
+that is our 4th argument
+
+
+.cousres.join(context.authours,
+c => c.authoid,
+a => a.id,
+(course, author)=> new{
+courseName = course.Name,
+AuthorName = author.Name
+
+})

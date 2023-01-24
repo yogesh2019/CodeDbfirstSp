@@ -13,15 +13,14 @@ namespace CodeDbfirstSp
             var _context = new PlutoDbContext();
             var query =
                _context.Courses
-               .GroupBy(c => c.Level);
+               .Join(_context.Authors,
+               c => c.AuthorID,
+               a => a.AuthorID,
+               (course, author) => new { Name= course.Title, });
 
-            foreach (var i in query)
+            foreach(var i in query)
             {
-                Console.WriteLine("group key:",i.Key);
-                foreach(var t in i)
-                {
-                    Console.WriteLine("\t{0}",t.Description);
-                }
+                Console.WriteLine(i.Name);
             }
             Console.ReadLine();
         }
