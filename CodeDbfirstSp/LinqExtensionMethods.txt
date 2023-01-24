@@ -14,3 +14,17 @@ this is a delegate
 
 where ever there is func we can write a lambda expression
 
+orderBy
+
+again it takes a lambda expression Order(c => c.Name)
+
+if you want to order by multiple properties 
+
+then we use 
+
+Thenby(c => c.Level)
+
+
+you can use orderbyDescending
+
+after .you can press enter 
