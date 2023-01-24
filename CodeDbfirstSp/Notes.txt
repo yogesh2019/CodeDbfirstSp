@@ -50,3 +50,41 @@ of the stored_procedure
 
 note that we have full control over this class
 
+that we just created as complex type return
+
+now if we take a look at level property of our model
+
+the type of level property is string
+
+there are two ways we can create a enum here 
+
+lets start by creating a new enum
+
+in our plutoMOdel
+
+
+we have enum
+
+i will add new enumm under enum
+
+i will change that to byte
+
+beginner intermediate and advanced 1, 3 and 3
+
+
+now under courses type we can change the level property to enum
+
+to provide the proper mappping
+
+we need to change the varchar for level to byte
+
+
+so with this enum type we can write clean code
+
+var course = new Course();
+
+course.Level = CourseLevel.Beginner
+
+
+we can also create a new enum and reference here DbFirst.Level
+
