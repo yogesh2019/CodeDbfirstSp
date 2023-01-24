@@ -1,0 +1,52 @@
+﻿************* funtion import
+
+
+we can change the name here and it will internally map to our stored procedure
+
+
+now why will you requ to change the name of the function
+
+in lot of dbs functions start with func
+
+and stored procedure start with sp
+
+if we do dbContext.funcGetAuthorCourses()
+
+we can change the name to follow the standard convention
+
+so we can remove this func 
+
+and put it like getGetAuthor courses
+
+now lets take a look at getCourses function import
+
+now in this case it returns complex 
+
+how it complex different from entities
+
+but entity framework also supports a different type which is called a comlex type
+
+
+
+so as the model is similar to data  
+we can modify the return type to Course
+
+and we can delete the complex type
+
+a good example is when stored procedure joins two tables and returns data
+
+
+
+in that case the result cannot be mapped to your existing enitites
+
+
+now lets add complex type for our getCourse
+
+now while editing how do we add a complex tag
+
+by default the name of the complex type is name of the stored procedure and name of 
+
+of the stored_procedure
+
+note that we have full control over this class
+
