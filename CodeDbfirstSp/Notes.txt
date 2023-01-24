@@ -170,3 +170,14 @@ a group is Enumerable so we can iterate over it
 "\t{0}", course.Name
 
 note that we didnt use here count or max
+
+now what we want here is
+
+console.writeLIne("{0}({1})")
+what i want is course level and no of courses in that level
+
+for what we will use here is 
+
+group.key() and second will be our group.count()
+
+

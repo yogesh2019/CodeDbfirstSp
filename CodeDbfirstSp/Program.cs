@@ -18,9 +18,7 @@ namespace CodeDbfirstSp
             
             foreach(var group in query)
             {
-                Console.WriteLine(group.Key);
-                foreach(var item in group)
-                    Console.WriteLine("\t {0}",item.Title);
+                Console.WriteLine("{0} {1}",group.Key , group.Count());
             }
             Console.ReadLine();
         }
