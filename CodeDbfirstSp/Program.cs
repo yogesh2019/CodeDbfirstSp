@@ -18,10 +18,7 @@ namespace CodeDbfirstSp
 
             foreach (var i in query)
             {
-                foreach(var a in i) 
-                    {
-
-                    } 
+                Console.WriteLine(i.Name);
             }
             Console.ReadLine();
         }
