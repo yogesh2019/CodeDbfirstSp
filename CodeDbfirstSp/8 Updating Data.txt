@@ -1,0 +1,27 @@
+﻿************** Introduction
+we will learn how to add update remove objects
+
+we will also use linqpad
+
+in DbContext
+
+we have change tracker
+
+that tracks changes in objects
+
+when you add object
+it marks it as added
+
+and the same is marked for modified
+
+for remove the change tracker sets it to deleted
+
+all of these changes are in memory
+
+when we call save changes method
+
+then they are transacted to db
+once this is done
+
+change tracker mark agains them as unsaved
+
