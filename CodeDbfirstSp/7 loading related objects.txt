@@ -1,0 +1,61 @@
+﻿here we will 
+see ways to load objects
+
+lazy loading
+eager loading 
+explicit loading
+
+in this 
+
+********** lazy loading
+
+var course = context.Courses.Single(c => c.Id = 2);
+for each ( var tag in course.tags)
+	console(tag.name)
+
+methods like single  or single default
+
+first or first default
+ count max avg 
+
+ causes immeidiate execution
+
+ but this course object here  does not have its tags intilized
+
+ later when we iterate through tags
+ course.tags is going to send another query to database
+ to include the tages for this course
+
+ so this is what we called lazy loading
+
+ so let see how lazy loading is implementd
+
+ this class is declared as virtual ICollectoin<Tag> Tags
+
+ this is the key to lazy loading
+
+
+ so what will happen during execution is
+
+ this class will create a course proxy class
+
+ with a little difference
+
+ if tags is null then its going to load
+
+ so we can see this proxy class at runtime
+
+
+ Best pracises
+ use when loading an object graph is costly
+ use in desktop application as when required child pages are opened we can load related objects
+ avoid in web applications
+
+ so for web application you can disable lazy loading by not using virtual class
+
+ we can use configuration to disable lazy loading
+
+ in the plutocontext
+
+ we can set this.configuration.lazyloadingEnabled = false;
+
