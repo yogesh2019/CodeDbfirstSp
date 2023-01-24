@@ -111,3 +111,17 @@ the second style of programmers is fine with lambda style programmers
 
 
 the extension methods are more powerful
+
+*********** linq syntax
+
+i will do filering, projection, grouping and joining
+
+
+restriction
+
+all courses in level 1
+
+start with from c
+
+and ends with select c
+
