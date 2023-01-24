@@ -11,12 +11,17 @@ namespace CodeDbfirstSp
         static void Main(string[] args)
         {
             var _context = new PlutoDbContext();
-            var query = from c in _context.Courses
-                        where c.Title.Contains("C#")
-                        orderby c.Title descending
-                        select new { Name = c.Title , Author = c.Author.Name};
-            foreach( var c in query)
-                Console.WriteLine(c.Name );
+            var query =
+                from c in _context.Courses
+                group c by c.Level into g
+                select g;
+            
+            foreach(var group in query)
+            {
+                Console.WriteLine(group.Key);
+                foreach(var item in group)
+                    Console.WriteLine("\t {0}",item.Title);
+            }
             Console.ReadLine();
         }
     }

@@ -141,3 +141,32 @@ sometimes we want to return a fewer properties for objects
 so here instead of selecting c we will send
 
 select new {Name = c.Name, Author = c.Author.Name}
+
+
+
+we have group by in linq but this is different from the one in sql
+
+in sql we use group by along with an aggregate function
+
+in linq we dont necessarily use it group by
+
+we use group to break list of objects into one or more group
+
+note that here each group has three props which is based on the level of their group
+
+
+so lets see group by in action
+
+from c in context.couses
+group c by c.level into g
+select g
+
+so what we get into result now is a list of groups
+
+in loop
+display group.key
+
+a group is Enumerable so we can iterate over it
+"\t{0}", course.Name
+
+note that we didnt use here count or max
