@@ -108,3 +108,16 @@ courseName = course.Name,
 AuthorName = author.Name
 
 })
+
+context.Authors.GroupJoin(context.courses, a => a.Id, c => c.authorId, (author, courses
+)=> new {
+   author = author,
+   courses = courses.count()
+})
+
+
+*********** for cross join we have select many
+context.Authors.SelectMany (a = context.courses,(author, course )=> new{
+	author= author.name,
+	course = course.name
+]})
