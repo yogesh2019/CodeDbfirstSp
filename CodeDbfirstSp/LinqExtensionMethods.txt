@@ -1,0 +1,16 @@
+﻿
+
+linq extention methods 
+
+so lets start with restriction
+
+extension methods takes
+
+courses.where()
+
+this method takes a func of course and bool
+
+this is a delegate
+
+where ever there is func we can write a lambda expression
+

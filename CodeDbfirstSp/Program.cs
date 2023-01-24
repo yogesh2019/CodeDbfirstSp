@@ -12,13 +12,11 @@ namespace CodeDbfirstSp
         {
             var _context = new PlutoDbContext();
             var query =
-                from c in _context.Courses
-                from a in _context.Authors
-                select new { AuthorName = a.Name, CourseName = c.Title };
+               _context.Courses.Where(c => c.CourseID == 1);
 
             foreach (var i in query)
             {
-                Console.WriteLine("{0},{1}",i.AuthorName,i.CourseName);
+                Console.WriteLine(i.Title);
             }
             Console.ReadLine();
         }
