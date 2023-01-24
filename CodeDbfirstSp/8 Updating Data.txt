@@ -90,3 +90,28 @@ one thing you need to take care while updating is
 first you need to load them in your context
 
 this is because of the change tracker  
+
+****************** Removing Objects
+
+will see two 
+
+one with cascade delet and another without cascade 
+
+when we have cascade delelte set it will delete its related records also
+
+var author = context.Authors.Find(2);
+context.Authors.Remove(author);
+
+context.Savechanges
+
+always look at last exception of the chain
+
+so in this case 
+
+we have to eager load author and its courses
+
+find cannot be used after include so i am changint this to a single
+
+vara author = context.Authors.Include(a => a.Courses).Single( a => a.id == 1);
+context.Courses.RemoveRange(author.Courses);
+context.Authors.Remove(author)
