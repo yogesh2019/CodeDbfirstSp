@@ -59,3 +59,28 @@ first or first default
 
  we can set this.configuration.lazyloadingEnabled = false;
 
+ ************ n + 1 problem
+
+ lazy loading can be a good solution to optimize the 
+ application responsiveness
+
+ if used inappropriately it can lead to n+1 problem
+
+ n + 1 mean to get N entities and their related queries
+
+ we will end up with n+1 queries
+
+ courses = context.courses.toList()
+
+ foreach var course in courses
+	course.Name, course.Author.Name
+
+so while iterating it will query each course object for authorname
+
+n extra queries + 1
+
+in sequel profiler i can see all this queries
+
+these are all unnecessary queries
+
+here it is only 4 extra queries as we had only 4 unique authors
