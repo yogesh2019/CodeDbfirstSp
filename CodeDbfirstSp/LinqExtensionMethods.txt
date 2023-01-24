@@ -49,3 +49,34 @@ you will end up getting llist of list
 
 
 you can create flat list by doing selectMany
+
+**********Set
+
+
+you can avoid duplicates using distinct method
+
+select
+.distint()
+
+************** groping
+
+by grouping we mean to break down the list into multiple levels
+
+
+courses.
+groupby
+
+this takes a func
+with c and key on which we want to break down the courses
+
+groupby(c => c.Level)
+
+
+under loop
+
+group.key
+
+
+course.Name
+
+as i told 
