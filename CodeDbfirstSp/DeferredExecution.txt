@@ -1,0 +1,59 @@
+﻿a v imp topic called deferred execution
+
+so here we all the list of courses 
+
+we are gonna get them via 
+
+_context.courses 
+and display them on console
+
+so let see what happens behind the scene	
+
+we will put debugger on dbcontext
+
+and will see sequel server profiler
+
+so at point when we reach the for loop you might think 
+
+that the entity framework has ran the query on our database
+
+and we can see the actual query that was run by entity framework
+
+queries are not executing at the time you create them
+
+and are executed when one of the situation happens
+
+* iterating over query variable
+* calling ToLIst, ToArray, ToDictionalry
+
+array methods return singleton value
+
+this is what we called deferred execution 
+
+
+deferred execution enables query to be extended
+
+
+now let say we add a property in our dommain
+
+and we can also add methods in our domain
+
+now if we do lilke 
+
+var courses = context.Courses.Where( c => c.IsBeginnerCourse == true)
+here we will get a runtime exception
+
+
+
+as this is a customer query and not accesible by entity framework
+
+in this case 
+
+we use immediate execution
+
+
+so i will put courses.ToList() 
+here then use our method
+
+and this will have performance affect 
+as this will load all the data from memory just to filter them

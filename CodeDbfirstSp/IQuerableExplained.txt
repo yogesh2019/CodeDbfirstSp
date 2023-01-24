@@ -1,0 +1,53 @@
+﻿i querable is an interface that derives from IEnumerable
+
+
+
+i enumerable represent any object that can be enumerated
+we can use forach block
+string array list dictionary
+
+so any that is querable is enumerable
+
+so what is the difference between iqueryable and ienumerable
+
+i querable allows queries to be extended without being immediatley executed
+
+so if we do context.Courses
+
+this is a dbset class 
+and dbSet class implements IQuerable interface
+
+so we can store this in 
+
+IQueryble <Course>  courses = context.courses;
+
+var filtered  = course.Where(c => c.Level ==1 )
+
+for each( var course in filtered)
+	Console.Writeline(course.Name)
+
+now what if we change the IQuerable to IEnumerable
+
+here in profile we are gonna see all the courses and not filtered by 1
+
+the reason for that is when you use IEnumerable you cannot extend a query
+
+let see the difference
+
+IQuerable<Course> x 
+x.Where()
+
+if i change from IEnumerable to IQuerable
+
+then we will see overloads that support expression
+
+expression are only passed and not executing at  this time
+
+so this expression is not executed and stored in expression object
+and simply called when expression is executed
+
+but when i change this to IEnumerable 
+
+the overloads required delegate
+
+means that are called immeditely
