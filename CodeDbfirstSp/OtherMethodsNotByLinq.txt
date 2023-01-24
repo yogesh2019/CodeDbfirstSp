@@ -1,0 +1,66 @@
+﻿partioning
+
+this is useful 
+
+when you want return a page of records
+
+imagine you are sending a page of records and you are sending
+10 records per page
+
+dbContext.skip(10).Take(10)
+
+**************
+
+element operators
+till now we are returning a list of courses
+
+context.Coures.First
+
+or we can do 
+Orderby(c => c.level).FirstOrDefault()
+
+in this case its gonna return null
+
+we can also supply a predicate
+
+orderBy(c => c.level).FirstOrDefault( c => c.FullPrice > 100)
+
+similar to first method we also have a method called last
+
+
+courses.Last method is present in linq
+
+we also have SingleOrDefault object
+*********************************
+
+Quantifying
+
+
+
+
+_context.Courses.All( c => c.FullPrice)
+
+to check all courses satisfy a particular criteria
+
+
+this return a boolean
+
+we also have a similar method called any
+
+context.Courses.Any(c => c.Level ==1)
+
+
+
+
+
+**************************************
+
+
+
+aggregating
+
+sometimes we just want to get the count of database
+
+context.Courses.Count()
+
+avg sum max and min
