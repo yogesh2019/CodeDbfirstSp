@@ -1,0 +1,36 @@
+﻿
+mediates between domain and datamapping layer
+
+benefits>
+1. minimizes duplicate query logic
+
+repository.GetTopSellingCourses(category, count)
+2. decouples your app with persisance framework
+a new orm every year
+
+3. promotes testabiity
+
+the repository should have
+add remove get and getAll find
+
+
+
+a repository should not have semantics of our db
+
+
+how are we going to set and update them
+
+that is where unit of work comes in picture
+
+unit of work 
+monitors changes and coordinates writing out of changes
+
+let see if is already implemented or not
+DbSEt has no methods to update
+DbContext acts as unit of work
+
+
+minimizes duplicate query no in entity
+decouples your entity framweor not in entity
+
+clean architecture suggests that apps should be independent of frameworks
