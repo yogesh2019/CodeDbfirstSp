@@ -13,6 +13,7 @@ namespace CodeDbfirstSp
         static void Main(string[] args)
         {
             var context = new PlutoDbContext();
+           
             var query = context.Authors.GroupJoin(context.Courses, a => a.AuthorID, c => c.AuthorID, (author, courses) => new { AuthorName = author.Name, courses = courses});
 
             foreach(var items in query)
