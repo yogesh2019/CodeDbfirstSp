@@ -20,7 +20,7 @@ namespace CodeDbfirstSp.Persistence.Repositories
 
         public IEnumerable<Cours> GetTopSellingCourses(int count)
         {
-            throw new NotImplementedException();
+            return PlutoDbContext.Courses.OrderByDescending(c => c.Price).Take(count).ToList();
         }
         
         public IEnumerable<Cours> GetCoursesWithAuthors(int pageIndex, int pageSize = 10)

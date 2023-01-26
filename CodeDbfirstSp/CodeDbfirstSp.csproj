@@ -54,6 +54,8 @@
     <Compile Include="Author.cs">
       <DependentUpon>PlutoModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cores\Repositories\ICourseRepository.cs" />
+    <Compile Include="Cores\Repositories\IRepository.cs" />
     <Compile Include="Cours.cs">
       <DependentUpon>PlutoModel.tt</DependentUpon>
     </Compile>
@@ -67,6 +69,7 @@
       <DependentUpon>PlutoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Persistence\Repositories\Repository.cs" />
     <Compile Include="PlutoModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,13 +112,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="7 loading related objects.txt" />
-    <Content Include="8 Updating Data.txt" />
-    <Content Include="DeferredExecution.txt" />
-    <Content Include="IQuerableExplained.txt" />
-    <Content Include="LinqExtensionMethods.txt" />
-    <Content Include="Notes.txt" />
-    <Content Include="OtherMethodsNotByLinq.txt" />
+    <Content Include="Notes\7 loading related objects.txt" />
+    <Content Include="Notes\8 Updating Data.txt" />
+    <Content Include="Notes\DeferredExecution.txt" />
+    <Content Include="Notes\IQuerableExplained.txt" />
+    <Content Include="Notes\LinqExtensionMethods.txt" />
+    <Content Include="Notes\Notes.txt" />
+    <Content Include="Notes\OtherMethodsNotByLinq.txt" />
+    <Content Include="Notes\UsingEntityFramework.txt" />
+    <Compile Include="Persistence\Repositories\CourseRepository.cs" />
     <Content Include="PlutoModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PlutoModel.Context.cs</LastGenOutput>
@@ -130,5 +135,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
