@@ -111,5 +111,15 @@ namespace CodeDbfirstSp
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCourse", courseIDParameter, titleParameter, descriptionParameter, levelStringParameter, levelParameter);
         }
+    
+        public virtual ObjectResult<Author> spGetAuthors()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Author>("spGetAuthors");
+        }
+    
+        public virtual ObjectResult<Author> spGetAuthors(MergeOption mergeOption)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Author>("spGetAuthors", mergeOption);
+        }
     }
 }

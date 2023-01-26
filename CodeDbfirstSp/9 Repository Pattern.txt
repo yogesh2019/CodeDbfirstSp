@@ -31,6 +31,84 @@ DbContext acts as unit of work
 
 
 minimizes duplicate query no in entity
-decouples your entity framweor not in entity
+decouples your entity framweor not inentity
 
 clean architecture suggests that apps should be independent of frameworks
+
+***********implementing repository pattern
+
+first we need a IRepository
+Add()
+Remove()
+GetId()
+Find()
+
+then we are going to implement this interface in a class called repository
+	
+
+	this class and interface will be generic
+
+	then we will
+
+	have 
+	IcourseRepository
+	in this we are gonna define functions that are not d
+
+	for ex
+	GetTopSellingcourses
+	GetCoursesWithAuthors
+	which uses eager loading to load course and their authors
+
+	the CourseRepository derives from generic repository
+	and also imlements the ICourseRepository
+
+
+	now we need an Interface 
+	IUnitOfWork
+
+	this will be specific to our application
+
+	then we have a UnitOfWork class
+
+
+
+
+
+
+
+
+
+	in generic implemenation of ther repository
+	it takes Dbcontext as constructor
+	protexted
+	the repositories should not return IQuerable
+
+	ICourseRepository
+
+	CourseRepostory
+	skip(pageINdex-1)*pagesize
+	take(pagesize)
+
+	so underUnitOfWork
+	public ICourseRepository Courses
+	public IcourseRepository Authors 
+
+	we will be calling complete method
+
+	unitOfWork.context.courses
+
+	for mvc
+	we will intitilize _context in contrutuor
+	under index get courses and put them in a view
+
+	for decoupling 
+
+	i will injext Iunitfo work in homecontroller
+
+
+	_unitOfWork.courses.GEtAll()
+
+	under addCourse
+	we have 
+	_unitOfWork.courses.Add
+	_UnitOfWork.complete
