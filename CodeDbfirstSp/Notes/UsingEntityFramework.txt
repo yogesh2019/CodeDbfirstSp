@@ -2,4 +2,10 @@
 
 
 ******** customer repository
+********** unit of work
 
+so here is IUnitofWork Interface: Diposable
+Under Core Repositories
+exposes two repositories
+ICourseRepositories 
+and a complete method

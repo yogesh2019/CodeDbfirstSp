@@ -56,6 +56,7 @@
     </Compile>
     <Compile Include="Cores\Repositories\ICourseRepository.cs" />
     <Compile Include="Cores\Repositories\IRepository.cs" />
+    <Compile Include="Cores\Repositories\IUnitOfWork.cs" />
     <Compile Include="Cours.cs">
       <DependentUpon>PlutoModel.tt</DependentUpon>
     </Compile>
